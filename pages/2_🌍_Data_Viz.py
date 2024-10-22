@@ -12,7 +12,7 @@ st.set_page_config(
 def get_pyg_render(df) -> "StreamlitRenderer":
     return StreamlitRenderer(df,spec="./gw_config.json",spec_io_mode="rw")
 
-st.title("Test App")
+st.title("DatViz Studio page 2")
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type=["csv"])
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
