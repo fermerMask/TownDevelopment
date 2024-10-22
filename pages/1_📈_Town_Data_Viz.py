@@ -6,8 +6,11 @@ def data_read(file):
         data_frame = pd.read_csv(file)
         return data_frame
 
-# アプリのタイトル
-st.title("DatViz Studio")
+st.set_page_config(
+    page_title="DatViz Studio",
+    layout="wide"
+)
+st.write("# DataViz Studio")
 
 # CSVファイルのアップロード
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type=["csv"])
@@ -37,7 +40,7 @@ with visual_tab:
         if x_axis and y_axis:
             # X軸の列が存在するか確認してデータをプロット
             if x_axis in df.columns:
-                plot_data = df.set_index(x_axis)[y_axis]
+                plot_data = df.set_index(str(x_axis))[y_axis]
 
                 # グラフの描画
                 if chart_type == "line":
