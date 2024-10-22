@@ -7,7 +7,7 @@ def data_read(file):
         return data_frame
 
 # アプリのタイトル
-st.title("データの可視化")
+st.title("DatViz Studio")
 
 # CSVファイルのアップロード
 uploaded_file = st.file_uploader("CSVファイルをアップロードしてください", type=["csv"])
